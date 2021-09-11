@@ -9,11 +9,18 @@
 // PD Puede utilizar una propiedad de cierre o de función para mantener el recuento actual. O escribe
 // ambas variantes.
 
-function makeCounter() { // instead of: // 
-  let count = 0 
-  function counter() { 
-    return counter.count++; 
-  }; 
-  counter.count = 0; return counter; 
-} 
-let counter = makeCounter();
+const makeCounter =  { // instead of: // 
+  count: 0 ,
+  counter: function() { 
+    return  this.count + 1; 
+  },
+  set: function(value) { 
+    return this.count = value; 
+  },
+  decrease: function() {
+    return this.count - 1;
+  } 
+}  
+console.log(makeCounter.counter());
+console.log(makeCounter.set(100));
+console.log(makeCounter.decrease());
