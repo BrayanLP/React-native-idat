@@ -1,0 +1,76 @@
+ body{
+  background: #f2f2f2;
+} 
+.purple{
+  background: #9543f0;
+  color: white;
+}
+.blue{
+  background: #3c359a;
+}
+.skyblue{
+  background: #029fff;
+}
+.green{
+  background: #1a840f;
+}
+   
+.dashboard{
+  width: calc(100% - 280px);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: block;
+  min-width: 1200px;
+  /* background: blue; */
+}
+.dashboard .row{
+  width: 100%;
+  margin: 0;
+  /* gap: 10px; */
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+}
+.dashboard .row .col{
+  flex-basis: 100%;
+  max-width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.dashboard .row .col-2{
+  flex-basis: 50%;
+  max-width: 50%;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.dashboard .row .card{
+  /* background: red; */
+  min-height: 250px;
+  width: 100%;
+  /* background: white; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  height: 100%;
+  border-radius: 10px;
+  /* gap: 1rem; */
+  /* box-shadow: 0px 12px 24px -12px rgba(0, 0, 0, 0.5); */
+}
+.h-100{
+  min-height: 100vh !important;
+  height: 100vh !important;
+}
+ 
