@@ -1,0 +1,206 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+
+
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet {
+  @media (max-width: 800px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+// #d2ecf6
+// #b4ecf2
+// #1ed6da
+// #282950
+// #d2d2d2
+
+.wrapper, body, html{
+  padding: 0;
+  margin: 0;
+  background-color: #d2ecf6;
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+  // background: red;
+  @include for-tablet{
+    background: black;
+  }
+  .container{
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  } 
+  ul li{
+    list-style: none;
+    display: inline-block;
+
+    a{
+     color: white;
+     display: block;
+     padding: 10px;
+     text-decoration: none;
+   }
+  }
+}
+
+.container{
+  width: 100%;
+  height: 100%;
+  display: block;
+  .row{
+    display: flex;
+    height: 100%;
+    @include for-tablet{ 
+      flex-direction: column;
+    }
+    .col{
+      width: 50%;
+      display: flex; 
+      justify-content: center;
+      flex-direction: column; 
+      box-sizing: border-box;
+      @include for-tablet{
+        width: 100%;
+        // flex-direction: row !important;
+        // flex-direction: row;
+      }
+      h1{
+        color: white;
+        font-size: 45px;
+        margin: 0;
+        text-align: left;
+        display: block;
+      }
+      p{
+        color: white;
+        font-size: 25px;
+
+      }
+      &.orange{
+        padding-left: 5%;
+        padding-right: 5%;
+        background: linear-gradient(180deg, #ffb100 0%, #d3880f 100%);
+        @include for-tablet{
+          min-height: 800px;
+          padding-top: 2rem;
+        }
+      }
+      &.blue{
+        padding-left: 5%;
+        padding-right: 5%;
+        background: linear-gradient(180deg, #6033b4 0%, #e174fd 100%);
+        align-items: center;
+        img{
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 500px;
+        }
+
+      }
+
+      // Search
+      .search{ 
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        margin-top: 150px; 
+        @include for-tablet{
+          margin-top: 0px;
+        }
+        p{
+          font-size: 15px;
+        }
+        .group{
+          display: flex;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          gap: 15px;
+          input{
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 0 20px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 5px;
+            color: gray;
+            box-sizing: border-box;
+          }
+          button{
+            width: 150px;
+            height: 50px;
+            border: none;
+            background: #976100; 
+            border-radius: 5px;
+            outline: none;
+            color: white;
+            img{
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+      }
+      
+    } 
+  }
+}
+
+.floating{
+  position: absolute;
+  // bottom: 0;
+  // right: 0;
+  // bottom: 0;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  @include for-tablet{
+    bottom: 10px;
+    left: initial;
+    top: initial;
+    right: 10px;
+    transform: none;
+  }
+
+  button{
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border: none;
+    // border: 3px solid white;
+    border-radius: 50%;
+    color: white;
+  }
+}
+
+// Modal
+
+.ReactModal__Content{
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
